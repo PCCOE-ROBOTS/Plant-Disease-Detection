@@ -1,0 +1,78 @@
+body {
+    background-color: aliceblue;
+}
+
+section
+{
+    margin-top: 100px;
+}
+
+.card {
+    margin: 20px 0;
+}
+
+/* card sidebar */
+.card-sidebar {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    padding: 20px 0 10px 0;
+    background-color: #ffc905;
+    border-radius: 10px;
+}
+
+.card-userpic img {
+    background-color: orange;
+    float: none;
+    margin: 0 auto;
+    width: 50%;
+    height: 50%;
+    -webkit-border-radius: 5% !important;
+    -moz-border-radius: 5% !important;
+    border-radius: 5% !important;
+}
+
+.card-title {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.card-title-name {
+    color: #17252a;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+
+
+.card-userbuttons {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.card-userbuttons .btn {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 6px 15px;
+    margin-right: 5px;
+}
+
+.card-userbuttons .btn:last-child {
+    margin-right: 0px;
+}
+
+.card-usermenu {
+    margin-top: 30px;
+}
+
+.card-usermenu ul li {
+   
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-usermenu ul li:last-child {
+    margin-bottom: 10px;
+}
