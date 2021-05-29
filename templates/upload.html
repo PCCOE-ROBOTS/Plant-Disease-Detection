@@ -1,33 +1,33 @@
 <!doctype html>
+
 <head>
-	<title>Plant Disease Detection</title>
-	<meta charset="utf-8">
+    <title>Plant Disease Detection</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<style type="text/css">
+    <style type="text/css">
         body {
-			background-color: aliceblue;
+            background-color: aliceblue;
         }
-
-        section
-		{
-			margin-top: 100px;
-		}
-
+        
+        section {
+            margin-top: 100px;
+        }
+        
         .card {
             margin: 20px 0;
         }
-
         /* card sidebar */
+        
         .card-sidebar {
             box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
             padding: 20px 0 10px 0;
             background-color: #ffc905;
             border-radius: 10px;
         }
-
+        
         .card-userpic img {
             background-color: orange;
             float: none;
@@ -38,26 +38,24 @@
             -moz-border-radius: 5% !important;
             border-radius: 5% !important;
         }
-
+        
         .card-title {
             text-align: center;
             margin-top: 20px;
         }
-
+        
         .card-title-name {
             color: #17252a;
             font-size: 16px;
             font-weight: 600;
             margin-bottom: 7px;
         }
-
-
-
+        
         .card-userbuttons {
             text-align: center;
             margin-top: 10px;
         }
-
+        
         .card-userbuttons .btn {
             text-transform: uppercase;
             font-size: 11px;
@@ -65,42 +63,39 @@
             padding: 6px 15px;
             margin-right: 5px;
         }
-
+        
         .card-userbuttons .btn:last-child {
             margin-right: 0px;
         }
-
+        
         .card-usermenu {
             margin-top: 30px;
         }
-
+        
         .card-usermenu ul li {
-           
-			margin-bottom: 50px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
+            margin-bottom: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-
+        
         .card-usermenu ul li:last-child {
             margin-bottom: 10px;
-        }     
+        }
     </style>
 </head>
+
 <body>
-	{% if filename %}
-	<section class="user-card">
+    {% if filename %}
+    <section class="user-card">
         <div class="container">
             <div class="row card">
                 <div class="col-md-4"></div>
                 <div class="col-xs-12 col-md-4">
                     <div class="card-sidebar">
-						
-						<div class="card-userpic">
-                            <img src="{{ url_for('display_image', filename=filename) }}"
-                                class="img-responsive" alt="">
+                        <div class="card-userpic">
+                            <img src="{{ url_for('display_image', filename=filename) }}" class="img-responsive" alt="">
                         </div>
-						
                         <!-- SIDEBAR USER TITLE -->
                         <div class="card-title">
                             <div class="card-title-name">
@@ -108,17 +103,15 @@
                             </div>
                         </div>
                         <!-- END SIDEBAR USER TITLE -->
-                    
                         <!-- SIDEBAR MENU -->
                         <div class="card-usermenu">
-		                    <ul class="nav">
-								<li>Results <br> Plant Disease : {{disease}} .</li>
-								<hr style="border-top:1px solid black!important;">
-								<li><form action="/"><button type="submit" class="btn btn-outline-danger">BACK</button></form></li>
-								
-							</ul>
-							
-							
+                            <ul class="nav">
+                                <li>Results <br> Plant Disease : {{disease}} .</li>
+                                <hr style="border-top:1px solid black!important;">
+                                <li>
+                                    <form action="/"><button type="submit" class="btn btn-outline-danger">BACK</button></form>
+                                </li>
+                            </ul>
                         </div>
                         <!-- END MENU -->
                     </div>
@@ -130,13 +123,13 @@
         </div>
         </div>
     </section>
-	{% else %}
-	<section class="user-card">
+    {% else %}
+    <section class="user-card">
         <div class="container">
             <div class="row card">
                 <div class="col-md-4"></div>
                 <div class="col-xs-12 col-md-4">
-                    <div class="card-sidebar">						
+                    <div class="card-sidebar">
                         <!-- SIDEBAR USER TITLE -->
                         <div class="card-title">
                             <div class="card-title-name">
@@ -144,16 +137,15 @@
                             </div>
                         </div>
                         <!-- END SIDEBAR USER TITLE -->
-                    
                         <!-- SIDEBAR MENU -->
                         <div class="card-usermenu">
-							<form method="post" action="/" enctype="multipart/form-data">
-								<ul class="nav">
-									<li><input id="up" type="file" name="file" autocomplete="off" style="border:1.2px solid #17252a;" required></li>
-									<hr style="border-top:1px solid black!important;">
-									<li><button type="submit" class="btn btn-outline-danger">SUBMIT</button></li>
-								</ul>
-							</form>
+                            <form method="post" action="/" enctype="multipart/form-data">
+                                <ul class="nav">
+                                    <li><input id="up" type="file" name="file" autocomplete="off" style="border:1.2px solid #17252a;" required></li>
+                                    <hr style="border-top:1px solid black!important;">
+                                    <li><button type="submit" class="btn btn-outline-danger">SUBMIT</button></li>
+                                </ul>
+                            </form>
                         </div>
                         <!-- END MENU -->
                     </div>
@@ -165,12 +157,9 @@
         </div>
         </div>
     </section>
-	{% endif %}
-	
-
+    {% endif %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 
-
-
+</html>
